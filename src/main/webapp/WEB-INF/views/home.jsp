@@ -9,6 +9,9 @@
 <body>
 <h1><spring:message code="app.title"/></h1>
 
+<sec:authorize access="isAuthenticated()">
+    authenticated as <sec:authentication property="principal.username" />
+</sec:authorize>
 
 <sec:authorize access="isAuthenticated()">
     <form action="<c:url value="/logout"/>" method="post">
